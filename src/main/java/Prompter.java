@@ -59,7 +59,7 @@ public class Prompter {
     }
 
     public void adminPrompt() {
-        System.out.println("Administrator: Jar Set Up!");
+        System.out.println("Administrator: Jar Set-Up!");
 
         System.out.print("What type of item should fill the jar? ");
         itemType = scanner.next();
@@ -88,7 +88,7 @@ public class Prompter {
     public void checkAnswer() {
         if (answer > maxNumber) {
             overGuess();
-        } else if (answer > fill && answer < maxNumber) {
+        } else if (answer > fill && answer <= maxNumber) {
             tooHigh();
         } else if (answer < fill) {
             tooLow();
@@ -100,10 +100,7 @@ public class Prompter {
         System.out.print("Your guess must be less than " + maxNumber + " Try Again: ");
         answer = scanner.nextInt();
 
-        guessAmount++;
-
         checkAnswer();
-
     }
 
     public void tooHigh() {
